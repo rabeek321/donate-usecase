@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from '../../../services/http.service';
 import { Router } from '@angular/router';
 import { LoginReq, LoginRes } from '../../../models/models';
+import { environment } from 'src/environments/environment';
+import { EndPoints } from '../../../services/endpoints.enum';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,7 +21,8 @@ export class LoginComponent implements OnInit {
     });
   }
   validateUser() {
-    this.http.readData(this.loginForm.value).subscribe(
+    const endpoint = `${environment.logUrl}/${EndPoints.login}`;
+    this.http.createData(endpoint, this.loginForm.value).subscribe(
       (res: LoginRes) => {
         if (res.statusCode === 200) {
           sessionStorage.setItem('currentUser', JSON.stringify(res));

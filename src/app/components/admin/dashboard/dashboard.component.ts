@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpService } from '../../../services/http.service';
+import { ContributorsReq, ContributorDetails } from '../../../models/models';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,12 +10,14 @@ import { HttpService } from '../../../services/http.service';
 })
 export class DashboardComponent implements OnInit {
   data: any;
-
+  contributorDetails: ContributorDetails[];
   constructor(private http: HttpService) {
 
   }
 
   ngOnInit() {
+    this.getContributors();
+
     this.data = {
       datasets: [{
         data: [
@@ -34,21 +37,23 @@ export class DashboardComponent implements OnInit {
         label: 'My dataset'
       }],
       labels: [
-        'Red',
-        'Green',
-        'Yellow',
-        'Grey',
-        'Blue'
+        'wild life',
+        'Kelara floods',
+        'Odisa earth quake',
+        'Amazon Forest fire',
+        'Education Donation'
       ]
     };
 
   }
 
-  getContributors($event) {
-    const endpoint = `${environment.apiUrl}`;
+  getContributors() {
+    const shemeId = 1001;
+    const endpoint = `${environment.logUrl}/${shemeId}/contributors`;
     this.http.readData(endpoint).subscribe(
-      (res) => {
-        console.log(res);
+      (res: ContributorsReq) => {
+        this.contributorDetails = res.contributorDetails;
+        console.log(this.contributorDetails);
       }
     );
   }
