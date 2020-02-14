@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'donate',
-    loadChildren: () => import('../app/components/admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('../app/components/donate/donate.module').then(m => m.DonateModule)
   },
   {
     path: '',

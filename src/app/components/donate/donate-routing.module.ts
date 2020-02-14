@@ -15,7 +15,7 @@ const routes: Routes = [
     component: SchemesComponent
   },
   {
-    path: '',
+    path: 'payment',
     component: PaymentComponent
   }
 ];
