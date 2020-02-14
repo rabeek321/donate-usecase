@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.sky {
+  color: #209eda;
+  margin-right: 5px;
+  font-weight: bolder;
+}
+.fly {
+  color: #fff;
+  font-weight: bolder;
+}
+
+.gradient{
+  background: linear-gradient(to right bottom, #cfcbc9 ,#ff6200,#ff6200,#cfcbc9) fixed center;
+}
