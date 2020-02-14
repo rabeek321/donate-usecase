@@ -107,3 +107,5 @@ margin-bottom: 5%;">
         </div>
     </div>
 </section>
+<app-loader [loader]="loader"></app-loader>
+<app-alert [sharedAlert]="donateService.showAlert" *ngIf="donateService.showAlert?.modalShow"></app-alert>
