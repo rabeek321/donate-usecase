@@ -1,1 +1,109 @@
-<p>payment works!</p>
+<section id="cover" style="margin-top: 5%;
+margin-bottom: 5%;">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Make Payment</h3>
+                        </div>
+                        <div class="card-body">
+                            <form [formGroup]="paymentForm" (ngSubmit)="submitPayment();">
+                                <div class="form-group text-left">
+                                    <label for="email" class="links">User name<span class="required">*</span></label>
+                                    <input type="text" class="form-control search-slt" formControlName="username"
+                                        placeholder="Enter Username">
+                                    <div *ngIf="payment.username.touched && payment.username.invalid" class="error">
+                                        <div *ngIf="payment.username.errors && payment.username.errors.required">
+                                            Username is <strong>required</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-left">
+                                    <label for="email" class="links">Email<span class="required">*</span></label>
+                                    <input type="email" class="form-control search-slt" formControlName="email"
+                                        placeholder="Enter Email">
+                                    <div *ngIf="payment.email.touched && payment.email.invalid" class="error">
+                                        <div *ngIf="payment.email.errors && payment.email.errors.required">
+                                            Email is <strong>required</strong>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="payment.email.touched && payment.email.invalid" class="error">
+                                        <div *ngIf="payment.email.errors && payment.email.errors.email">
+                                            Email is <strong>Invalid</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-left">
+                                    <label for="email" class="links">Mobile Number<span
+                                            class="required">*</span></label>
+                                    <input type="text" class="form-control search-slt" formControlName="mobileNumber"
+                                        placeholder="Enter Mobile Number">
+                                    <div *ngIf="payment.mobileNumber.touched && payment.mobileNumber.invalid"
+                                        class="error">
+                                        <div
+                                            *ngIf="payment.mobileNumber.errors && payment.mobileNumber.errors.required">
+                                            Mobile Number is <strong>required</strong>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="payment.mobileNumber.touched && payment.mobileNumber.invalid"
+                                        class="error">
+                                        <div
+                                            *ngIf="payment.mobileNumber.errors && payment.mobileNumber.errors.minlength">
+                                            Minimum 10 digits <strong>required</strong>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="payment.mobileNumber.touched && payment.mobileNumber.invalid"
+                                        class="error">
+                                        <div
+                                            *ngIf="payment.mobileNumber.errors && payment.mobileNumber.errors.maxlength">
+                                            Maximum 10 digits <strong>required</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-left">
+                                    <label for="email" class="links">Pan Number<span class="required">*</span></label>
+                                    <input type="text" class="form-control search-slt" formControlName="panNumber"
+                                        placeholder="Enter Mobile Number">
+                                    <div *ngIf="payment.panNumber.touched && payment.panNumber.invalid" class="error">
+                                        <div *ngIf="payment.panNumber.errors && payment.panNumber.errors.required">
+                                            Pan Number is <strong>required</strong>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="payment.panNumber.touched && payment.panNumber.invalid" class="error">
+                                        <div *ngIf="payment.panNumber.errors && payment.panNumber.errors.minlength">
+                                            Minimum 12 digits <strong>required</strong>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="payment.panNumber.touched && payment.panNumber.invalid" class="error">
+                                        <div *ngIf="payment.panNumber.errors && payment.panNumber.errors.maxlength">
+                                            Maximum 12 digits <strong>required</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-left">
+                                    <label for="email" class="links">Payment Type<span class="required">*</span></label>
+                                    <select class="form-control" id="exampleFormControlSelect2"
+                                        formControlName="paytype">
+                                        <option value="">Choose Payment Type</option>
+                                        <option value="PayTm">PayTm</option>
+                                        <option value="Gpay">Gpay</option>
+                                        <option value="PhonePe">PhonePe</option>
+                                    </select>
+                                    <div *ngIf="payment.paytype.touched && payment.paytype.invalid" class="error">
+                                        <div *ngIf="payment.paytype.errors && payment.paytype.errors.required">
+                                            Payment Type is <strong>required</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" [disabled]="paymentForm.invalid"
+                                    class="btn btn-primary">Make Payment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
