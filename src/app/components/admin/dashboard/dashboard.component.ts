@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
 
   getContributors($event) {
     const scheme = this.schemesList[$event.element._index];
-    const endpoint = `${environment.logUrl}/${scheme.schemeId}/contributors`;
+    const endpoint = `${environment.apiUrl}/${scheme.schemeId}/contributors`;
     this.http.readData(endpoint).subscribe(
       (res: ContributorsReq) => {
         this.contributorDetails = res.contributorDetails;
