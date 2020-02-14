@@ -6,7 +6,7 @@
     <ul class="nav nav-tabs" *ngIf="userDetails && userDetails?.doctorName">
       <li class="nav-item dropdown">
         <a href="javascript:void(0)" (click)="show = !show" class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-          <strong class="text-success">Welcome <span class="text-info">{{userDetails?.doctorName}}</span></strong>          
+          <strong class="text-success">Welcome <span class="text-info">{{userDetails?.adminName}}</span></strong>          
         </a>
         <div class="dropdown-menu" [ngClass]="{'show':show}">
           <a href="javascript:void(0);" (click)="logout();" class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
