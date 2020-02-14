@@ -37,7 +37,7 @@ export class PaymentComponent implements OnInit {
       email: this.paymentForm.value.email,
       mobileNo: this.paymentForm.value.mobileNumber,
       panNo: this.paymentForm.value.panNumber,
-      paymentType: this.paymentForm.value.paytype,
+      // paymentType: this.paymentForm.value.paytype,
       schemeId: this.schemeId
     };
     const endpoints = `${environment.apiUrl}/${EndPoints.donations}`;
@@ -45,12 +45,12 @@ export class PaymentComponent implements OnInit {
       console.log(res);
       this.loader = false;
       Swal.fire({
-        text: 'You have successfully made your payment',
+        text: 'You have successfully made your payment through' + this.paymentForm.value.paytype,
         // tslint:disable-next-line: max-line-length
         imageUrl: 'https://cdn4.vectorstock.com/i/1000x1000/82/03/cash-paid-rubber-stamp-vector-12438203.jpg',
         imageWidth: 400,
         imageHeight: 200,
-        imageAlt: 'Custom image',
+        imageAlt: 'Custom image'
       });
     },
       error => {
