@@ -32,7 +32,7 @@
                 <input type="email" formControlName="mobileNumber"
                     [ngClass]="{'is-invalid': loginForm?.controls?.mobileNumber?.touched && loginForm?.controls?.mobileNumber?.invalid}"
                     class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-               {{loginForm?.controls?.mobileNumber?.errors | json}}
+              
                     <div class="invalid-feedback">
                     <span *ngIf="loginForm?.controls?.mobileNumber?.errors?.required">Please
                         enter Phone Number.</span>
