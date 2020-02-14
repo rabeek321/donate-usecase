@@ -10,6 +10,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { PanelModule } from 'primeng/panel';
 import {ButtonModule} from 'primeng/button';
 import {RatingModule} from 'primeng/rating';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   declarations: [],
@@ -18,10 +19,11 @@ import {RatingModule} from 'primeng/rating';
     CalendarModule,
     TableModule,
     DialogModule,
-    ToastModule
+    ToastModule,
+    ChartModule
   ],
   exports: [CalendarModule, TableModule, DialogModule, ToastModule, CardModule, AccordionModule,
-    CarouselModule, PanelModule, ButtonModule, RatingModule]
+    CarouselModule, PanelModule, ButtonModule, RatingModule,ChartModule]
 })
 export class PrimengModule { }
 
