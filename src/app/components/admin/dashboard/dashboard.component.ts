@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { HttpService } from '../../../services/http.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   data: any;
 
-  constructor() {
+  constructor(private http: HttpService) {
 
   }
 
@@ -43,7 +45,12 @@ export class DashboardComponent implements OnInit {
   }
 
   getContributors($event) {
-    console.log($event);
+  //   const endpoint=`${environment.apiUrl}`
+  //   this.http.readData().subscribe(
+  //     (res) =>{
+        
+  //     }
+  //   )
   }
 
 }

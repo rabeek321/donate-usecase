@@ -25,30 +25,20 @@
         </a>
     </div>
 </section>
-<div class="container" style="margin-top:5%;">
+<div class="container overflow my-5">
     <!-- Top Navigation -->
 	<div class="content">
 		<div class="grid">
-			<figure class="effect-lily">
-				<img src="../../../../assets/images/image2.jpg" alt="img12"/>
+			<figure class="effect-lily" *ngFor="let cat of charityList;let i=index">
+				<img src="../../../../assets/images/cat{{i+1}}.jpg" alt="img12"/>
 				<figcaption>
 					<div style="background-color: #000; opacity: 0.8;">
-						<h2 class="text-success">NGO <span class="text-success">Charity</span></h2>
+						<h2 class="text-success">{{cat.categoryName}} <span class="text-success">Charity</span></h2>
 						<p style="font-size: 18px;"><strong class="text-primary">Charity brings to life again those who are spiritually dead. </strong></p>
 					</div>
-					<a href="javascript:void(0);" (click)="goToSchemes(1);">View Schemes</a>
+					<a href="javascript:void(0);" (click)="goToSchemes(cat.categoryId);">View Schemes</a>
 				</figcaption>			
-			</figure>
-			<figure class="effect-lily">
-				<img src="../../../../assets/images/image3.jpg" alt="img1"/>
-				<figcaption>
-					<div style="background-color: #000; opacity: 0.8;">
-						<h2 class="text-success">Non-NGO <span class="text-success">Charity</span></h2>
-						<p style="font-size: 18px;"><strong class="text-primary">There is no exercise better for the heart than reaching down and lifting people up. </strong></p>
-					</div>
-					<a href="javascript:void(0);" (click)="goToSchemes(2);">View Schemes</a>
-				</figcaption>			
-			</figure>
+			</figure>			
         </div>
     </div>
     </div>

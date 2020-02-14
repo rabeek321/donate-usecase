@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/'
+  apiUrl: 'http://10.117.189.163:8686/smilecharities/'
 };
 
 /*

@@ -20,7 +20,7 @@ charityList;
 
     getCharityList() {
       this.loader = true;
-      const endpoints = `${environment.apiUrl}/${EndPoints.userDetails}` ;
+      const endpoints = `${environment.apiUrl}${EndPoints.Categories}` ;
       this.donateService.readData(endpoints).subscribe(res => {
         console.log(res);
         this.loader = false;
@@ -36,6 +36,7 @@ charityList;
     }
 
   ngOnInit() {
+    this.getCharityList();
   }
 
 }
