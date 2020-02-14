@@ -1,49 +1,34 @@
-<div class="container">
-    <div class="row py-2">
-        <div class="col-12 text-right py-2">
-            <button class="btn btn-primary" (click)="manageSlots()">Manage Slots</button>
+<section style="margin-top:10px;">
+    <div class="container">
+        <div class="row py-2">
+            <div class="col-12 text-center py-4">
+                <h2>Charities List</h2>
+            </div>
         </div>
-    </div>
-    <div class="row py-2">
-        <div class="col-12 text-left py-2">
-            <h5>List of Patients to consult for today</h5>
-        </div>
-    </div>
-</div>
-<div class="container shadow accountsummary">   
-    
-    <div id="products" class="row view-group pt-4">
-        <!-- <div class="item col-xs-4 col-lg-4 list-group-item">
-            <div class="thumbnail card p-1 text-center">
-                Patients not booked today
-             </div>
-        </div> -->
-       
-        <div class="item col-xs-4 col-lg-4 list-group-item" >
-            <div class="thumbnail card p-1">
-                <div class="img-event">
-                    <img class="group list-group-image img-fluid" src="https://ui-avatars.com/api/?name=rabeek" alt="" />
+        <div class="row">
+            <div class="item col-xs-4 col-lg-4 list-group-item" *ngIf="schemesList?.length == 0 ">
+                <div class="thumbnail card p-1 text-center">
+                   No Schemes Found
                 </div>
-                <div class="caption card-body p-2">
-                    <div class="row patientinfo">
-                        <div class="col-4">
-                            <h6 class="group card-title inner list-group-item-heading">
-                                Rabeek</h6>
-                        </div>
-                        <div class="col-4">
-                            <p class="group inner list-group-item-text">
-                                9876543210 </p>
-                        </div>
-                        <div class="col-4">
-                            <p class="group inner list-group-item-text">
-                                test</p>
+            </div>
+            <!--team-1-->
+            <div class="col-lg-4" *ngFor="let schemes of schemesList">
+                <div class="our-team-main">
+                    <div class="team-front">
+                        <img src="data:image/jpeg;base64,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"
+                            class="img-fluid" />
+                        <h3>{{schemes.schemeName}}</h3>
+                        <h3><strong class="text-primary">&#8377;{{schemes.amount}}</strong></h3>
+                    </div>
+                    <div class="team-back text-center" style="margin-top:30px;">
+                        <div class="footer text-center" style="padding-top:50px;">
+                            <button (click)="donateFund(schemes.schemeId);" class="btn btn-danger">Donate Now</button>
                         </div>
                     </div>
                 </div>
-                <div class="img-event float-right bg-info px">
-                   <p>Px</p>
-                </div>
             </div>
+            <!--team-1-->
         </div>
     </div>
-</div>
+</section>
+
