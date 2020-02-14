@@ -33,6 +33,11 @@ export class SchemesComponent implements OnInit {
           this.loader = false;
         });
     }
+
+    donateFund(scheme: number) {
+      this.router.navigate(['/donate/payment'], { queryParams: { schemeId: scheme } });
+    }
+
   ngOnInit() {
     this.routeNavigate.queryParams.subscribe(params => {
       this.categoryId = params.categoryId;
