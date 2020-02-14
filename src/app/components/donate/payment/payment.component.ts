@@ -28,36 +28,36 @@ export class PaymentComponent implements OnInit {
   * @param
   * Get login form controll access
   */
- get payment() { return this.paymentForm.controls; }
+  get payment() { return this.paymentForm.controls; }
 
- submitPayment() {
-  if (this.paymentForm.valid) {
-    const postObj = {
-      userName: this.paymentForm.value.username,
-      email: this.paymentForm.value.email,
-      mobileNo: this.paymentForm.value.mobileNumber,
-      panNo: this.paymentForm.value.panNumber,
-      // paymentType: this.paymentForm.value.paytype,
-      schemeId: this.schemeId
-    };
-    const endpoints = `${environment.apiUrl}/${EndPoints.donations}`;
-    this.donateService.createData(endpoints, postObj).subscribe(res => {
-      console.log(res);
-      this.loader = false;
-      Swal.fire({
-        text: 'You have successfully made your payment through' + this.paymentForm.value.paytype,
-        // tslint:disable-next-line: max-line-length
-        imageUrl: 'https://cdn4.vectorstock.com/i/1000x1000/82/03/cash-paid-rubber-stamp-vector-12438203.jpg',
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Custom image'
-      });
-    },
-      error => {
+  submitPayment() {
+    if (this.paymentForm.valid) {
+      const postObj = {
+        userName: this.paymentForm.value.username,
+        email: this.paymentForm.value.email,
+        mobileNo: this.paymentForm.value.mobileNumber,
+        panNo: this.paymentForm.value.panNumber,
+        // paymentType: this.paymentForm.value.paytype,
+        schemeId: this.schemeId
+      };
+      const endpoints = `${environment.apiUrl}/${EndPoints.donations}`;
+      this.donateService.createData(endpoints, postObj).subscribe(res => {
+        console.log(res);
         this.loader = false;
-      });
+        Swal.fire({
+          text: 'You have successfully made your payment through' + this.paymentForm.value.paytype,
+          // tslint:disable-next-line: max-line-length
+          imageUrl: 'https://cdn4.vectorstock.com/i/1000x1000/82/03/cash-paid-rubber-stamp-vector-12438203.jpg',
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: 'Custom image'
+        });
+      },
+        error => {
+          this.loader = false;
+        });
+    }
   }
- }
 
   ngOnInit() {
     this.routeNavigate.queryParams.subscribe(params => {

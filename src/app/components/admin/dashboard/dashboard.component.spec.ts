@@ -13,7 +13,7 @@ import { HttpService } from '../../../services/http.service';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
-fdescribe('DashboardComponent', () => {
+describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
   let api: HttpService;
