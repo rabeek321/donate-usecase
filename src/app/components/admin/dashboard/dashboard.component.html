@@ -1,1 +1,49 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <p-chart type="pie" [data]="data" height="300px" (onDataSelect)="getContributors($event)"></p-chart>
+        </div>
+        <div class="col-6">
+            <div class="container shadow accountsummary">
+
+                <div id="products" class="row view-group pt-4">
+                    <div class="item col-xs-4 col-lg-4 list-group-item" *ngIf="contributorDetails?.length == 0 ">
+                        <div class="thumbnail card p-1 text-center">
+                            Patients not booked today
+                        </div>
+                    </div>                  
+                    <div class="item col-xs-4 col-lg-4 list-group-item" *ngFor="let contributor of contributorDetails">
+                        <div class="thumbnail card p-1">
+                            <div class="img-event">
+                                <img class="group list-group-image img-fluid"
+                                    src="https://ui-avatars.com/api/?name={{contributor.userName}}=28a745" alt="" />
+                            </div>
+                            <div class="caption card-body p-2">
+                                <div class="row patientinfo">
+                                    <div class="col-6">
+                                        <h6 class="group card-title inner list-group-item-heading">
+                                            <i class="fa fa-user" aria-hidden="true"></i> {{contributor.userName}}</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="group inner list-group-item-text">
+                                            <i class="fa fa-phone-square" aria-hidden="true"></i> {{contributor.mobNumber}} </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="group inner list-group-item-text">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i> {{contributor.email}}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="group inner list-group-item-text">
+                                            <i class="fa fa-shield" aria-hidden="true"></i> {{contributor.panNumber | uppercase }}</p>
+                                    </div>
+                                </div>
+                            </div>                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

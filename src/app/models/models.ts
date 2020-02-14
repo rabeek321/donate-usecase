@@ -5,60 +5,61 @@ export interface LoginReq {
 
 export interface LoginRes {
         statusCode: number;
-        doctorId: number;
-        doctorName: string;
+        adminName: string;
 }
 
-
-export interface GetSlots {
+export interface CategoriesRes {
         statusCode: number;
-        message: string;
-        slotDetails: SlotList[];
-}
-export interface SlotList {        
-        slotName: string;
-        availablity: boolean;
+        categoryDetails: CategoryDetails[];
 }
 
-export interface PostSlotsReq {
-        slotSelected: SlotSelected[];
+export interface CategoryDetails {
+        categoryId: number;
+        categoryName: string;
 }
 
-export interface SlotSelected {
-        slotName: string;
+export interface SchemeRes {
+        statusCode: number;
+        schemeDetails: SchemeDetails[];
+}
+
+export interface SchemeDetails {
+        schemeId: number;
+        schemeName: string;
+        amount: number;
+        description: string;
+        contributors: number;
+        taxBenefit: string;
+}
+
+export interface DonateReq {
+        userName: string;
+        email: string;
+        mobileNo: string;
+        panNo: string;
+        schemeId: number;
+}
+
+export interface DonateReq {
+        statusCode: number;
+        donationId: number;
 }
 
 export interface Response {
         statusCode: number;
-        message: string;
-}
-export interface Search {
-        statusCode: number;
-        message: string;
-        doctorDetails: DoctorDetails[];
-}
-export interface DoctorDetails {
-        doctorId: number;
-        doctorName: string;
-        specialization: string;
-        qualification: string;
-        hospitalName: string;
 }
 
-export interface AppoinmentReq {
-        patientName: string;
-        patientContact: string;
-        doctorId: number;
-        slotName: number;
-        hospitalName: string;
-}
-export interface PatentDetailsRes {
+
+export interface ContributorsReq {
         statusCode: number;
-        patientDetails: PatentDetails[];
+        contributorDetails: ContributorDetails[];
 }
 
-export interface PatentDetails {
-        patientName: string;
-        patientContact: string;
-        slotName: string;
+export interface ContributorDetails {
+        userName: string;
+        mobileNo: string;
+        email: string;
+        panNumber: string;
 }
+
+

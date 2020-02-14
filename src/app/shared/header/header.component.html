@@ -1,12 +1,11 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal"> <a class="navbar-brand" href="#"> <span class="sky">Smile</span> <span class="text-success">Charities</span></a></h5>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a *ngIf="!userDetails && !userDetails?.doctorName" class="p-2 text-primary" href="javascript:void(0)" (click)="login();">Login</a>
-    
-    <ul class="nav nav-tabs" *ngIf="userDetails && userDetails?.doctorName">
+    <a *ngIf="!userDetails && !userDetails?.adminName" class="p-2 text-primary" href="javascript:void(0)" (click)="login();">Login</a>
+    <ul class="nav nav-tabs" *ngIf="userDetails && userDetails?.adminName">
       <li class="nav-item dropdown">
         <a href="javascript:void(0)" (click)="show = !show" class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-          <strong class="text-success">Welcome <span class="text-info">{{userDetails?.doctorName}}</span></strong>          
+          <strong class="text-success">Welcome <span class="text-info">{{userDetails?.adminName}}</span></strong>          
         </a>
         <div class="dropdown-menu" [ngClass]="{'show':show}">
           <a href="javascript:void(0);" (click)="logout();" class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">

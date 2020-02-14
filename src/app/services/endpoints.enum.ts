@@ -1,4 +1,8 @@
-  
+
 export enum EndPoints {
-    userDetails = 'user'
-}
+    Categories = 'Categories',
+    donations = 'donations',
+    downloads = 'downloads',
+    mails = 'mails',
+    login = 'login'
+};

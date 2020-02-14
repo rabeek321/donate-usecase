@@ -1,0 +1,123 @@
+  
+.accountsummary {
+    margin-bottom: 30px;
+    background-color: #fff;
+  }
+  .card {
+    margin-bottom: 10px;
+  }
+  .card-header {
+    background-color: #209eda;
+  }
+
+  .view-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.thumbnail
+{
+    margin-bottom: 30px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 30px;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    border: 0;
+}
+.item.list-group-item .img-event {
+    float: left;
+    /* width: 30%; */
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+    display: inline-block;
+}
+.item.list-group-item .caption
+{
+    float: left;
+    width: 65%;
+    margin: 0;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item:after
+{
+    clear: both;
+}
+
+.thumbnail.card{
+    display: block !important;
+    overflow:hidden;
+}
+
+.px{
+    height: 64px;
+    width: 160px;
+    color: #fff;
+}
+
+
+.px p{
+    padding: 0px 54px;
+    font-size: 40px;
+}
+.caption.card-body{
+    text-align: center;
+}
+
+.slotlist p{
+    cursor: pointer;
+}
+.slot.border-success{
+    color:#fff;
+}
+.ui-button-text{
+    display: none !important;
+}
+.card-body .col-4{
+    margin:auto;
+}
+.card-title{
+    margin: 0px;
+}
+.list-group-item-text{
+    margin: 0px;
+}
+.patientinfo{
+    height: 48px;
+}
+
+.booked .slot{
+    background-color: #17a2b8!important ;
+    border-color: #17a2b8!important ;
+} 
+
+.nav-link:hover{
+    border:transparent !important;
+}
