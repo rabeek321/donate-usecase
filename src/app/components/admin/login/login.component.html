@@ -31,12 +31,11 @@
                 <label for="exampleInputEmail1">Phone Number</label>
                 <input type="email" formControlName="mobileNumber"
                     [ngClass]="{'is-invalid': loginForm?.controls?.mobileNumber?.touched && loginForm?.controls?.mobileNumber?.invalid}"
-                    class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              
+                    class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">        
                     <div class="invalid-feedback">
                     <span *ngIf="loginForm?.controls?.mobileNumber?.errors?.required">Please
                         enter Phone Number.</span>
-                    <span *ngIf="loginForm?.controls?.mobileNumber?.errors?.requiredPattern">Please enter only Numbers</span>
+                    <span *ngIf="loginForm?.controls?.mobileNumber?.errors?.pattern?.requiredPattern">Please enter only Numbers</span>
                 </div>
             </div>
             <div class="form-group">

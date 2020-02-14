@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     });
   }
   validateUser() {
-    const endpoint = `${environment.logUrl}/${EndPoints.login}`;
+    const endpoint = `${environment.apiUrl}/${EndPoints.login}`;
     this.http.createData(endpoint, this.loginForm.value).subscribe(
       (res: LoginRes) => {
         if (res.statusCode === 200) {
