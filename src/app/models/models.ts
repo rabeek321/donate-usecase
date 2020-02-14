@@ -16,6 +16,7 @@ export interface CategoriesRes {
 export interface CategoryDetails {
         categoryId: number;
         categoryName: string;
+        selected: boolean;
 }
 
 export interface SchemeRes {
@@ -61,5 +62,4 @@ export interface ContributorDetails {
         email: string;
         panNumber: string;
 }
-
 
