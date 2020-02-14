@@ -45,12 +45,12 @@ export class DashboardComponent implements OnInit {
   }
 
   getContributors($event) {
-  //   const endpoint=`${environment.apiUrl}`
-  //   this.http.readData().subscribe(
-  //     (res) =>{
-        
-  //     }
-  //   )
+    const endpoint = `${environment.apiUrl}`;
+    this.http.readData(endpoint).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    );
   }
 
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from '../../../services/http.service';
-import { environment} from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { EndPoints } from '../../../services/endpoints.enum';
+import { CategoriesRes, CategoryDetails } from '../../../models/models';
 import Swal from 'sweetalert2';
 import { from } from 'rxjs';
 
@@ -12,28 +13,28 @@ import { from } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-loader = false;
-charityList;
+  loader = false;
+  charityList: CategoryDetails[];
   constructor(
     private router: Router,
     public donateService: HttpService) { }
 
-    getCharityList() {
-      this.loader = true;
-      const endpoints = `${environment.apiUrl}${EndPoints.Categories}` ;
-      this.donateService.readData(endpoints).subscribe(res => {
-        console.log(res);
+  getCharityList() {
+    this.loader = true;
+    const endpoints = `${environment.apiUrl}/${EndPoints.Categories}`;
+    this.donateService.readData(endpoints).subscribe(res => {
+      console.log(res);
+      this.loader = false;
+      this.charityList = res.categoryDetails;
+    },
+      error => {
         this.loader = false;
-        this.charityList = res.categoryDetails;
-      },
-        error => {
-          this.loader = false;
-        });
-    }
+      });
+  }
 
-    goToSchemes(val) {
-      this.router.navigate(['/donate/schemes'], { queryParams: { categoryId: val } });
-    }
+  goToSchemes(val) {
+    this.router.navigate(['/donate/schemes'], { queryParams: { categoryId: val } });
+  }
 
   ngOnInit() {
     this.getCharityList();
