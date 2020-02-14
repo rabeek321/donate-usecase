@@ -73,12 +73,12 @@ margin-bottom: 5%;">
                                     </div>
                                     <div *ngIf="payment.panNumber.touched && payment.panNumber.invalid" class="error">
                                         <div *ngIf="payment.panNumber.errors && payment.panNumber.errors.minlength">
-                                            Minimum 12 digits <strong>required</strong>
+                                            Minimum 9 digits <strong>required</strong>
                                         </div>
                                     </div>
                                     <div *ngIf="payment.panNumber.touched && payment.panNumber.invalid" class="error">
                                         <div *ngIf="payment.panNumber.errors && payment.panNumber.errors.maxlength">
-                                            Maximum 12 digits <strong>required</strong>
+                                            Maximum 9 digits <strong>required</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +88,6 @@ margin-bottom: 5%;">
                                         formControlName="paytype">
                                         <option value="">Choose Payment Type</option>
                                         <option value="PayTm">PayTm</option>
-                                        <option value="Gpay">Gpay</option>
                                         <option value="PhonePe">PhonePe</option>
                                     </select>
                                     <div *ngIf="payment.paytype.touched && payment.paytype.invalid" class="error">

@@ -80,7 +80,7 @@ export class DashboardComponent implements OnInit {
     const endpoints = `${environment.apiUrl}/${EndPoints.Categories}`;
     this.http.readData(endpoints).subscribe(res => {
       this.catList = res.categoryDetails;
-    //  this.catList[0].selected = true;
+      this.catList[0].selected = true;
       this.schemes(this.catList[0].categoryId);
     });
   }

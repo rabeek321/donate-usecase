@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "smilecharities": {
+    "usecase1": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/smilecharities",
+            "outputPath": "dist/usecase1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "smilecharities:build"
+            "browserTarget": "usecase1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "smilecharities:build:production"
+              "browserTarget": "usecase1:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "smilecharities:build"
+            "browserTarget": "usecase1:build"
           }
         },
         "test": {
@@ -120,15 +120,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "smilecharities:serve"
+            "devServerTarget": "usecase1:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "smilecharities:serve:production"
+              "devServerTarget": "usecase1:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "smilecharities"
+  "defaultProject": "usecase1"
 }

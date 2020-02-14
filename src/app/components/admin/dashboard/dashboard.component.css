@@ -56,7 +56,7 @@
 .item.list-group-item .caption
 {
     float: left;
-    width: 65%;
+    width: 84%;
     margin: 0;
 }
 
@@ -109,9 +109,7 @@
 .list-group-item-text{
     margin: 0px;
 }
-.patientinfo{
-    height: 48px;
-}
+
 
 .booked .slot{
     background-color: #17a2b8!important ;

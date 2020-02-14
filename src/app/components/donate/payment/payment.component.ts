@@ -15,7 +15,7 @@ import { from } from 'rxjs';
 })
 export class PaymentComponent implements OnInit {
   paymentForm: FormGroup;
-  loader: false;
+  loader = false;
   schemeId: number;
   constructor(
     private formBuilder: FormBuilder,
@@ -32,20 +32,22 @@ export class PaymentComponent implements OnInit {
 
   submitPayment() {
     if (this.paymentForm.valid) {
+      this.loader = true;
       const postObj = {
         userName: this.paymentForm.value.username,
         email: this.paymentForm.value.email,
         mobileNo: this.paymentForm.value.mobileNumber,
         panNo: this.paymentForm.value.panNumber,
-        // paymentType: this.paymentForm.value.paytype,
+        paymentType: this.paymentForm.value.paytype,
         schemeId: this.schemeId
       };
       const endpoints = `${environment.apiUrl}/${EndPoints.donations}`;
       this.donateService.createData(endpoints, postObj).subscribe(res => {
         console.log(res);
         this.loader = false;
+        this.paymentForm.reset();
         Swal.fire({
-          text: 'You have successfully made your payment through' + this.paymentForm.value.paytype,
+          text: 'You have successfully made your payment',
           // tslint:disable-next-line: max-line-length
           imageUrl: 'https://cdn4.vectorstock.com/i/1000x1000/82/03/cash-paid-rubber-stamp-vector-12438203.jpg',
           imageWidth: 400,
@@ -75,7 +77,7 @@ export class PaymentComponent implements OnInit {
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       mobileNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      panNumber: ['', [Validators.required, Validators.minLength(12), Validators.maxLength(12)]],
+      panNumber: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
       paytype: ['', Validators.required]
     });
   }
