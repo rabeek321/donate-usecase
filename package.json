@@ -22,7 +22,7 @@
     "@angular/pwa": "^0.803.20",
     "@angular/router": "~8.2.14",
     "bootstrap": "^4.4.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "font-awesome": "^4.7.0",
     "http-server": "^0.12.1",
     "jquery": "^3.4.1",
